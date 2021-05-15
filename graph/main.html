@@ -3,9 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>緑コーダーが書く！ABCまとめ</title>
-        
-        <meta name="robots" content="noindex" />
+        <title>グラフ - 緑コーダーが書く！ABCまとめ</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -13,21 +11,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -40,7 +38,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
         </script>
 
@@ -86,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">はじめに</a></li><li class="chapter-item expanded "><a href="brute_force/main.html"><strong aria-hidden="true">1.</strong> 全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="brute_force/bit-brute_force/main.html"><strong aria-hidden="true">1.1.</strong> bit全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="brute_force/bit-brute_force/example/abc128_c.html"><strong aria-hidden="true">1.1.1.</strong> 過去問</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="binary_search/main.html"><strong aria-hidden="true">2.</strong> 2分探索</a></li><li class="chapter-item expanded "><a href="greedy/main.html"><strong aria-hidden="true">3.</strong> 貪欲法</a></li><li class="chapter-item expanded "><a href="dp/main.html"><strong aria-hidden="true">4.</strong> 動的計画法</a></li><li class="chapter-item expanded "><a href="graph/main.html"><strong aria-hidden="true">5.</strong> グラフ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/tree/main.html"><strong aria-hidden="true">5.1.</strong> 木</a></li><li class="chapter-item expanded "><a href="graph/dijkstra/main.html"><strong aria-hidden="true">5.2.</strong> ダイクストラ法</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">はじめに</a></li><li class="chapter-item expanded "><a href="../brute_force/main.html"><strong aria-hidden="true">1.</strong> 全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../brute_force/bit-brute_force/main.html"><strong aria-hidden="true">1.1.</strong> bit全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../brute_force/bit-brute_force/example/abc128_c.html"><strong aria-hidden="true">1.1.1.</strong> 過去問</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../binary_search/main.html"><strong aria-hidden="true">2.</strong> 2分探索</a></li><li class="chapter-item expanded "><a href="../greedy/main.html"><strong aria-hidden="true">3.</strong> 貪欲法</a></li><li class="chapter-item expanded "><a href="../dp/main.html"><strong aria-hidden="true">4.</strong> 動的計画法</a></li><li class="chapter-item expanded "><a href="../graph/main.html" class="active"><strong aria-hidden="true">5.</strong> グラフ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../graph/tree/main.html"><strong aria-hidden="true">5.1.</strong> 木</a></li><li class="chapter-item expanded "><a href="../graph/dijkstra/main.html"><strong aria-hidden="true">5.2.</strong> ダイクストラ法</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -117,7 +115,7 @@
                     <h1 class="menu-title">緑コーダーが書く！ABCまとめ</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -137,30 +135,22 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#はじめに" id="はじめに">はじめに</a></h1>
-<p>このドキュメントは，AtCoder Beginner Contest（以下ABC）で好成績を収めるために，過去のABCで出題された問題の種類や解法をまとめたものです．（執筆中）</p>
-<h2><a class="header" href="#想定する読者" id="想定する読者">想定する読者</a></h2>
-<p>Pythonを用いたプログラミングに慣れている方を読者として想定しており，Python言語自体の仕様や，基本的な文法にはあまり触れません．
-また，筆者自身も緑コーダーであり未熟であるため，このドキュメントで青diff以上の問題に触れることはほとんどありません．</p>
-<h2><a class="header" href="#フィードバック" id="フィードバック">フィードバック</a></h2>
-<p>もし誤植や，内容に誤りを発見した場合は，是非<a href="https://twitter.com/takesyhi_rs">Twitter</a>などでフィードバックしていただけると幸いです．</p>
-<h1><a class="header" href="#全探索" id="全探索">全探索</a></h1>
-<h1><a class="header" href="#bit全探索" id="bit全探索">bit全探索</a></h1>
-<h1><a class="header" href="#abc128-c---switches" id="abc128-c---switches">ABC128 C - Switches</a></h1>
-<p><a href="https://atcoder.jp/contests/abc128/tasks/abc128_c">https://atcoder.jp/contests/abc128/tasks/abc128_c</a></p>
-<h1><a class="header" href="#2分探索" id="2分探索">2分探索</a></h1>
-<h1><a class="header" href="#貪欲法" id="貪欲法">貪欲法</a></h1>
-<h1><a class="header" href="#動的計画法" id="動的計画法">動的計画法</a></h1>
-<h1><a class="header" href="#グラフ" id="グラフ">グラフ</a></h1>
-<h1><a class="header" href="#木" id="木">木</a></h1>
-<h1><a class="header" href="#ダイクストラ法" id="ダイクストラ法">ダイクストラ法</a></h1>
+                        <h1><a class="header" href="#グラフ" id="グラフ">グラフ</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="../dp/main.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="../graph/tree/main.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -170,7 +160,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="../dp/main.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a rel="next" href="../graph/tree/main.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
@@ -192,23 +190,13 @@
 
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
 
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            MathJax.Hub.Register.StartupHook('End', function() {
-                window.setTimeout(window.print, 100);
-            });
-        });
-        </script>
-        
         
 
     </body>
