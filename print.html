@@ -184,8 +184,43 @@ for i in range(10000):
 print(ans)
 </code></pre>
 <h1><a class="header" href="#bit全探索" id="bit全探索">bit全探索</a></h1>
+<p>全探索の種類の1つとして，bit全探索がある．bit全探索は，ある区別可能なものの集合について，それぞれ含めるか含めないか，より汎用的な言い方をするなら，真か偽かの組合せの全列挙を行うための手法である．</p>
+<p>\(N \)桁の2進数において，各ビットは\(1 \)か\(0 \)であり，\(0 \)〜\(2^{N}-1 \)の2進数表記において，当然同じ\(0 \)/\(1 \)の組合せは存在せず，全てユニークな組合せであると同時に，全ての組合せを網羅している．これを利用し，それをそのまま\(N \)個の真/偽の組合せとして使うのがbit全探索である．</p>
+<p>簡単なビット演算が必要になるため，最初はコードを書きづらいかもしれないが，何回か書くうちに徐々になれていく．</p>
 <h1><a class="header" href="#abc128-c---switches" id="abc128-c---switches">ABC128 C - Switches</a></h1>
 <p><a href="https://atcoder.jp/contests/abc128/tasks/abc128_c">https://atcoder.jp/contests/abc128/tasks/abc128_c</a></p>
+<p>実行時間制限: 2 sec / メモリ制限: 1024 MB</p>
+<h2><a class="header" href="#問題文-1" id="問題文-1">問題文</a></h2>
+<p>onとoffの状態を持つ\(N \)個のスイッチと，\(M \)個の電球がある．スイッチには\(1 \)から\( N\)の，電球には\(1 \)から\(M \)の番号がついている．</p>
+<p>電球\( i\)は\(k_i \)個のスイッチに繋がっていて，スイッチ\(s_{i1},s_{i2},...,s_{ik_i} \)のうちonになっているスイッチの個数を\(2 \)で割った余りが\(p_i \)に等しい時に点灯する．</p>
+<p>全ての電球が点灯するようなスイッチのon/offの状態の組み合わせは何通りあるか答えよ．</p>
+<h2><a class="header" href="#制約-1" id="制約-1">制約</a></h2>
+<ul>
+<li>\(1 \leq N, M \leq 10 \)</li>
+<li>\(1 \leq k_i \leq N \)</li>
+<li>\(1 \leq s_{ij} \leq N \)</li>
+<li>\(s_{ia} \neq s_{ib} (a \neq b) \)</li>
+<li>\(p_i \)は\(0 \)または\(1 \)</li>
+<li>入力は全て整数である</li>
+</ul>
+<h2><a class="header" href="#解法-1" id="解法-1">解法</a></h2>
+<p>難しい数え上げ問題に見えるので，全探索を検討してみる．</p>
+<p>スイッチの個数は最大でも\(10 \)個なので，スイッチのon/offの組み合わせは最大で\(2^{10}=1024 \)通りである．この組み合わせの列挙は，bit全探索により実装することができる．</p>
+<p>あるスイッチの組み合わせが，\(M \)個全ての電球それぞれの点灯する条件を満たしているかにかかる計算量は，\(O(MN) \)．よって，全体の計算量は\(O(2^NMN) \)となる．</p>
+<p>これは十分に高速である．</p>
+<h2><a class="header" href="#実装-1" id="実装-1">実装</a></h2>
+<pre><code class="language-py">n, m = map(int, input().split())
+com = [[*map(int, input().split())][1:] for _ in range(m)]
+p = [*map(int, input().split())]
+
+ans = 0
+for bits in range(1&lt;&lt;n):
+  ison = lambda sw: (bits&gt;&gt;(sw-1))&amp;1
+  ans += all(
+    (sum(map(ison, com[i]))%2 == p[i]) for i in range(m)
+  )
+print(ans)
+</code></pre>
 <h1><a class="header" href="#2分探索" id="2分探索">2分探索</a></h1>
 <h1><a class="header" href="#貪欲法" id="貪欲法">貪欲法</a></h1>
 <h1><a class="header" href="#動的計画法" id="動的計画法">動的計画法</a></h1>
