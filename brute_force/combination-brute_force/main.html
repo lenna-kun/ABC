@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>ABC201_C - 緑コーダーが書く！ABCまとめ</title>
+        <title>組合せ全探索 - 緑コーダーが書く！ABCまとめ</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">はじめに</a></li><li class="chapter-item expanded "><a href="../../brute_force/main.html"><strong aria-hidden="true">1.</strong> 全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/example/abc201_c.html" class="active"><strong aria-hidden="true">1.1.</strong> ABC201_C</a></li><li class="chapter-item expanded "><a href="../../brute_force/bit-brute_force/main.html"><strong aria-hidden="true">1.2.</strong> bit全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/bit-brute_force/example/abc128_c.html"><strong aria-hidden="true">1.2.1.</strong> ABC128_C</a></li></ol></li><li class="chapter-item expanded "><a href="../../brute_force/combination-brute_force/main.html"><strong aria-hidden="true">1.3.</strong> 組合せ全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/combination-brute_force/example/abc200_d.html"><strong aria-hidden="true">1.3.1.</strong> ABC200_D</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../binary_search/main.html"><strong aria-hidden="true">2.</strong> 2分探索</a></li><li class="chapter-item expanded "><a href="../../greedy/main.html"><strong aria-hidden="true">3.</strong> 貪欲法</a></li><li class="chapter-item expanded "><a href="../../dp/main.html"><strong aria-hidden="true">4.</strong> 動的計画法</a></li><li class="chapter-item expanded "><a href="../../graph/main.html"><strong aria-hidden="true">5.</strong> グラフ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../graph/tree/main.html"><strong aria-hidden="true">5.1.</strong> 木</a></li><li class="chapter-item expanded "><a href="../../graph/dijkstra/main.html"><strong aria-hidden="true">5.2.</strong> ダイクストラ法</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">はじめに</a></li><li class="chapter-item expanded "><a href="../../brute_force/main.html"><strong aria-hidden="true">1.</strong> 全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/example/abc201_c.html"><strong aria-hidden="true">1.1.</strong> ABC201_C</a></li><li class="chapter-item expanded "><a href="../../brute_force/bit-brute_force/main.html"><strong aria-hidden="true">1.2.</strong> bit全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/bit-brute_force/example/abc128_c.html"><strong aria-hidden="true">1.2.1.</strong> ABC128_C</a></li></ol></li><li class="chapter-item expanded "><a href="../../brute_force/combination-brute_force/main.html" class="active"><strong aria-hidden="true">1.3.</strong> 組合せ全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/combination-brute_force/example/abc200_d.html"><strong aria-hidden="true">1.3.1.</strong> ABC200_D</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../binary_search/main.html"><strong aria-hidden="true">2.</strong> 2分探索</a></li><li class="chapter-item expanded "><a href="../../greedy/main.html"><strong aria-hidden="true">3.</strong> 貪欲法</a></li><li class="chapter-item expanded "><a href="../../dp/main.html"><strong aria-hidden="true">4.</strong> 動的計画法</a></li><li class="chapter-item expanded "><a href="../../graph/main.html"><strong aria-hidden="true">5.</strong> グラフ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../graph/tree/main.html"><strong aria-hidden="true">5.1.</strong> 木</a></li><li class="chapter-item expanded "><a href="../../graph/dijkstra/main.html"><strong aria-hidden="true">5.2.</strong> ダイクストラ法</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -135,41 +135,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#abc201-c---secret-number" id="abc201-c---secret-number">ABC201 C - Secret Number</a></h1>
-<p><a href="https://atcoder.jp/contests/abc201/tasks/abc201_c">https://atcoder.jp/contests/abc201/tasks/abc201_c</a></p>
-<p>実行時間制限: 2 sec / メモリ制限: 1024 MB</p>
-<h2><a class="header" href="#問題文" id="問題文">問題文</a></h2>
-<p>高橋くんは，暗証番号を忘れてしまった．暗証番号は\(0 \)から\(9 \)までの数字のみからなる4桁の文字列で，\(0 \)から始まる場合もある．
-\(0 \)から\(9 \)までの各数字について，高橋くんは以下のように記憶している．彼の記憶は長さ\(10 \)の文字列\(S_0S_1...S_9 \)によって表される．</p>
-<ul>
-<li>\(S_i \)が<code>o</code>のとき: 数字\(i \)は暗証番号に確実に含まれていた．</li>
-<li>\(S_i \)が<code>x</code>のとき: 数字\(i \)は暗証番号に確実に含まれていなかった．</li>
-<li>\(S_i \)が<code>?</code>のとき: 数字\(i \)は暗証番号に確実に含まれているか分からない．</li>
-</ul>
-<p>高橋君が忘れてしまった暗証番号としてあり得るものは何通りあるか答えよ．</p>
-<h2><a class="header" href="#制約" id="制約">制約</a></h2>
-<ul>
-<li>\(S \)は<code>o</code>，<code>x</code>，<code>?</code>のみからなる長さ\(10 \)の文字列</li>
-</ul>
-<h2><a class="header" href="#解法" id="解法">解法</a></h2>
-<p>この問題は，一見入り組んだ数え上げ問題に見える．そこで，全探索を検討してみる．</p>
-<p>暗証番号が何通りあるかに注目する．問題文より，暗証番号は4桁なので，暗証番号は\(0000 \) 〜\(9999 \)の\(10000 \)通り．それぞれの暗証番号が入力で与えられた条件を満たしているかをチェックするのにかかる計算量は\(O(|S|) \)なので，\(N=10000 \)とすると，全探索による解法の計算量は\(O(N|S|) \)となることがわかる．</p>
-<p>これは十分に高速である．</p>
-<h2><a class="header" href="#実装" id="実装">実装</a></h2>
-<pre><code class="language-py">s = input()
-
-ans = 0
-for i in range(10000):
-  secret = str(i).zfill(4)
-  for j in range(10):
-    if s[j] == 'o' and (str(j) not in secret):
-      break
-    if s[j] == 'x' and (str(j) in secret):
-      break
-  else:
-    ans += 1
-
-print(ans)
+                        <h1><a class="header" href="#組合せ全探索" id="組合せ全探索">組合せ全探索</a></h1>
+<p>全探索の一種として，組合せ全探索がある．区別可能なものの集合の中から，ある数だけ選ぶ組合せを全て列挙することで条件を満たす組合せを導き出す手法おである．</p>
+<p>pythonの場合は，<code>itertools</code>モジュールの中に<code>collections</code>というメソッドが用意されているので，実装ではただそれを用いれば良い．</p>
+<h2><a class="header" href="#例" id="例">例</a></h2>
+<p>以下は，\(1 \)，\(2 \)，\(3 \)，\(4 \)の4つから3つを選ぶ組合せを列挙しリスト化するコード．</p>
+<pre><code class="language-py">&gt;&gt;&gt; import itertools
+&gt;&gt;&gt; list(itertools.combinations(range(1, 5), 3))
+[(1, 2, 3), (1, 2, 4), (1, 3, 4), (2, 3, 4)]
 </code></pre>
 
                     </main>
@@ -177,13 +150,13 @@ print(ans)
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../brute_force/main.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../brute_force/bit-brute_force/example/abc128_c.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../../brute_force/bit-brute_force/main.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../brute_force/combination-brute_force/example/abc200_d.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -195,13 +168,13 @@ print(ans)
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../brute_force/main.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../brute_force/bit-brute_force/example/abc128_c.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../../brute_force/bit-brute_force/main.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../brute_force/combination-brute_force/example/abc200_d.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

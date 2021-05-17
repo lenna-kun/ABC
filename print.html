@@ -86,7 +86,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">はじめに</a></li><li class="chapter-item expanded "><a href="brute_force/main.html"><strong aria-hidden="true">1.</strong> 全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="brute_force/example/abc201_c.html"><strong aria-hidden="true">1.1.</strong> ABC201_C</a></li><li class="chapter-item expanded "><a href="brute_force/bit-brute_force/main.html"><strong aria-hidden="true">1.2.</strong> bit全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="brute_force/bit-brute_force/example/abc128_c.html"><strong aria-hidden="true">1.2.1.</strong> ABC128_C</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="binary_search/main.html"><strong aria-hidden="true">2.</strong> 2分探索</a></li><li class="chapter-item expanded "><a href="greedy/main.html"><strong aria-hidden="true">3.</strong> 貪欲法</a></li><li class="chapter-item expanded "><a href="dp/main.html"><strong aria-hidden="true">4.</strong> 動的計画法</a></li><li class="chapter-item expanded "><a href="graph/main.html"><strong aria-hidden="true">5.</strong> グラフ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/tree/main.html"><strong aria-hidden="true">5.1.</strong> 木</a></li><li class="chapter-item expanded "><a href="graph/dijkstra/main.html"><strong aria-hidden="true">5.2.</strong> ダイクストラ法</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">はじめに</a></li><li class="chapter-item expanded "><a href="brute_force/main.html"><strong aria-hidden="true">1.</strong> 全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="brute_force/example/abc201_c.html"><strong aria-hidden="true">1.1.</strong> ABC201_C</a></li><li class="chapter-item expanded "><a href="brute_force/bit-brute_force/main.html"><strong aria-hidden="true">1.2.</strong> bit全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="brute_force/bit-brute_force/example/abc128_c.html"><strong aria-hidden="true">1.2.1.</strong> ABC128_C</a></li></ol></li><li class="chapter-item expanded "><a href="brute_force/combination-brute_force/main.html"><strong aria-hidden="true">1.3.</strong> 組合せ全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="brute_force/combination-brute_force/example/abc200_d.html"><strong aria-hidden="true">1.3.1.</strong> ABC200_D</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="binary_search/main.html"><strong aria-hidden="true">2.</strong> 2分探索</a></li><li class="chapter-item expanded "><a href="greedy/main.html"><strong aria-hidden="true">3.</strong> 貪欲法</a></li><li class="chapter-item expanded "><a href="dp/main.html"><strong aria-hidden="true">4.</strong> 動的計画法</a></li><li class="chapter-item expanded "><a href="graph/main.html"><strong aria-hidden="true">5.</strong> グラフ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graph/tree/main.html"><strong aria-hidden="true">5.1.</strong> 木</a></li><li class="chapter-item expanded "><a href="graph/dijkstra/main.html"><strong aria-hidden="true">5.2.</strong> ダイクストラ法</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -220,6 +220,60 @@ for bits in range(1&lt;&lt;n):
     (sum(map(ison, com[i]))%2 == p[i]) for i in range(m)
   )
 print(ans)
+</code></pre>
+<h1><a class="header" href="#組合せ全探索" id="組合せ全探索">組合せ全探索</a></h1>
+<p>全探索の一種として，組合せ全探索がある．区別可能なものの集合の中から，ある数だけ選ぶ組合せを全て列挙することで条件を満たす組合せを導き出す手法おである．</p>
+<p>pythonの場合は，<code>itertools</code>モジュールの中に<code>collections</code>というメソッドが用意されているので，実装ではただそれを用いれば良い．</p>
+<h2><a class="header" href="#例" id="例">例</a></h2>
+<p>以下は，\(1 \)，\(2 \)，\(3 \)，\(4 \)の4つから3つを選ぶ組合せを列挙しリスト化するコード．</p>
+<pre><code class="language-py">&gt;&gt;&gt; import itertools
+&gt;&gt;&gt; list(itertools.combinations(range(1, 5), 3))
+[(1, 2, 3), (1, 2, 4), (1, 3, 4), (2, 3, 4)]
+</code></pre>
+<h1><a class="header" href="#abc200-d---happy-birthday-2" id="abc200-d---happy-birthday-2">ABC200 D - Happy Birthday! 2</a></h1>
+<p><a href="https://atcoder.jp/contests/abc200/tasks/abc200_d">https://atcoder.jp/contests/abc200/tasks/abc200_d</a></p>
+<p>実行時間制限: 2 sec / メモリ制限: 1024 MB</p>
+<h2><a class="header" href="#問題文-2" id="問題文-2">問題文</a></h2>
+<p>\(N \)個の正整数からなる数列\(A=(A_1,A_2,...,A_N) \)が与えられる．以下の条件を全て満たす2つの数列\(B=(B_1,B_2,...,B_x) \)，\(C=(C_1,C_2,...,C_y) \)が存在するか判定し，存在する場合はひとつ出力せよ．</p>
+<ul>
+<li>\( 1 \leq x,y \leq N \)</li>
+<li>\( 1 \leq B_1 &lt; B_2 &lt; ... &lt; B_x \leq N \)</li>
+<li>\( 1 \leq C_1 &lt; C_2 &lt; ... &lt; C_y \leq N \)</li>
+<li>\(B \)と\(C \)は，異なる数列である．
+<ul>
+<li>\(x \neq y \)のとき，または，ある整数\(1 \leq i \leq \mathrm{min}(x,y) \)が存在して\(B_i \neq C_i \)であるとき，\(B \)と\(C \)は異なるものとする．</li>
+</ul>
+</li>
+<li>\(A_{B_1}+A_{B_2}+...+A_{B_x} \)を\(200 \)で割った余りと\(A_{C_1}+A_{C_2}+...+A_{C_y} \)を\(200 \)で割った余りが等しい．</li>
+</ul>
+<h2><a class="header" href="#制約-2" id="制約-2">制約</a></h2>
+<ul>
+<li>入力は全て整数</li>
+<li>\(2 \leq N \leq 200 \)</li>
+<li>\(1 \leq A_i \leq {10}^9 \)</li>
+</ul>
+<h2><a class="header" href="#解法-2" id="解法-2">解法</a></h2>
+<p>後日加筆</p>
+<h2><a class="header" href="#実装-2" id="実装-2">実装</a></h2>
+<pre><code class="language-py">from itertools import *
+n = min(8, int(input()))
+a = [*map(int, input().split())]
+
+mod = [[] for _ in range(200)]
+for i in range(1, n+1):
+  for c in combinations(a[0:n], i):
+    mod[sum(c)%200].append([*c])
+
+l = [*filter(lambda l: len(l)&gt;1, mod)]
+if not l:
+  print(&quot;No&quot;)
+  exit()
+ans = [
+  sorted([a.index(e)+1 for e in l[0][0]]),
+  sorted([len(a)-a[::-1].index(e) for e in l[0][1]])
+]
+print(&quot;Yes&quot;)
+[print(len(e), ' '.join(map(str, e))) for e in ans]
 </code></pre>
 <h1><a class="header" href="#2分探索" id="2分探索">2分探索</a></h1>
 <h1><a class="header" href="#貪欲法" id="貪欲法">貪欲法</a></h1>
