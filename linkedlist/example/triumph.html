@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Triumph(自作問題) - 緑コーダーが書く！ABCまとめ</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">はじめに</a></li><li class="chapter-item expanded "><a href="../../brute_force/main.html"><strong aria-hidden="true">1.</strong> 全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/example/abc201_c.html"><strong aria-hidden="true">1.1.</strong> ABC201_C</a></li><li class="chapter-item expanded "><a href="../../brute_force/bit-brute_force/main.html"><strong aria-hidden="true">1.2.</strong> bit全探索</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../brute_force/bit-brute_force/example/abc128_c.html"><strong aria-hidden="true">1.2.1.</strong> ABC128_C</a></li><li class="chapter-item expanded "><a href="../../brute_force/bit-brute_force/example/abc200_d.html"><strong aria-hidden="true">1.2.2.</strong> ABC200_D</a></li></ol></li><li class="chapter-item expanded "><a href="../../brute_force/combination-brute_force/main.html"><strong aria-hidden="true">1.3.</strong> 組合せ全探索</a></li></ol></li><li class="chapter-item expanded "><a href="../../binary_search/main.html"><strong aria-hidden="true">2.</strong> 2分探索</a></li><li class="chapter-item expanded "><a href="../../greedy/main.html"><strong aria-hidden="true">3.</strong> 貪欲法</a></li><li class="chapter-item expanded "><a href="../../dp/main.html"><strong aria-hidden="true">4.</strong> 動的計画法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../dp/example/abc129_c.html"><strong aria-hidden="true">4.1.</strong> ABC129_C</a></li></ol></li><li class="chapter-item expanded "><a href="../../linkedlist/main.html"><strong aria-hidden="true">5.</strong> 連結リスト</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../linkedlist/example/triumph.html" class="active"><strong aria-hidden="true">5.1.</strong> Triumph(自作問題)</a></li></ol></li><li class="chapter-item expanded "><a href="../../graph/main.html"><strong aria-hidden="true">6.</strong> グラフ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../graph/tree/main.html"><strong aria-hidden="true">6.1.</strong> 木</a></li><li class="chapter-item expanded "><a href="../../graph/dijkstra/main.html"><strong aria-hidden="true">6.2.</strong> ダイクストラ法</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">緑コーダーが書く！ABCまとめ</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#triumph" id="triumph">Triumph</a></h1>
+<p>連結リストの問題が見つからなかったので作問した．</p>
+<p><a href="https://mojacoder.app/users/Coordinator/problems/triumph">https://mojacoder.app/users/Coordinator/problems/triumph</a></p>
+<p>実行時間制限: 2 sec / メモリ制限: 1024 MB</p>
+<h2><a class="header" href="#問題" id="問題">問題</a></h2>
+<p>スペード，クローバー，ダイヤ，ハートのカードがそれぞれ\(N \)枚ずつあり，それぞれのマークについて，\(1 \)~\(N \)の番号のカードが1枚ずつある．例えば，スペードの\(1 \)，クローバーの\(1 \)，ダイヤの\(1 \)，ハートの\(1 \)はそれぞれ\(S1 \)，\(C1 \)，\(D1 \)，\(H1 \)で表され，最初，カードは，\(S1,...,SN,C1,...CN,D1,...,DN,H1,...,HN \)の順番で並んでいる．
+これに対して，\(Q \)個のクエリに従ってシャッフルを行う．具体的には，\(i (1 \leq i \leq Q) \)番目のクエリでは次の操作をしなければならない．</p>
+<ul>
+<li>\(L_i,R_i \)が与えられる．カード\(L_i \)からカード\(R_i \)までの全てのカードを順番を保ったまま先頭に持っていく．つまり，カードの順列\([a_1,a_2,...,a_{4N}] \)において\(L_i=a_j,R_i=a_k (1 \leq j \leq k \leq 4N) \) であるとき，順列\([a_1,…,a_{j-1},a_j,…,a_k,a_{k+1}...,a_{4N}] \)を\([a_j,…,a_k,a_1,…,a_{j−1},a_{k+1},...a_{4N}] \)に変更する．</li>
+</ul>
+<p>\(Q \)個のクエリを順に処理した後のカードの順列において，全てのスペードのカードのみからなる部分列，全てのクローバーのカードのみからなる部分列，全てのダイヤのカードのみからなる部分列，全てのハートのカードのみからなる部分列をそれぞれこの順で出力せよ．</p>
+<p>部分列とは，ある順列から任意数の項を抜き出した上で，&quot;順番を保ったまま&quot;それらを並べてできる順列のことである．</p>
+<h2><a class="header" href="#制約" id="制約">制約</a></h2>
+<ul>
+<li>\(1 \leq N \leq {10}^5 \)</li>
+<li>\(1 \leq Q \leq {10}^5 \)</li>
+</ul>
+<h2><a class="header" href="#入力" id="入力">入力</a></h2>
+<p>\(N\ Q \)</p>
+<p>\(L_i\ R_i(1 \leq i \leq Q) \)はそれぞれ&quot;S&quot;または&quot;C&quot;または&quot;D&quot;または&quot;H&quot;の1文字と，数字\(j (1 \leq j \leq N) \)を並べてできる\(4N \)種類の文字列</p>
+<h2><a class="header" href="#出力" id="出力">出力</a></h2>
+<p>スペードのカードのみからなる部分列，クローバーのカードのみからなる部分列，ダイヤのカードのみからなる部分列，ハートのカードのみからなる部分列をそれぞれこの順で4行で出力せよ．</p>
+<h2><a class="header" href="#サンプル" id="サンプル">サンプル</a></h2>
+<h3><a class="header" href="#入力例1" id="入力例1">入力例1</a></h3>
+<pre><code>1 2
+C1 D1
+D1 S1
+
+</code></pre>
+<h3><a class="header" href="#出力例1" id="出力例1">出力例1</a></h3>
+<pre><code>S1
+C1
+D1
+H1
+
+</code></pre>
+<p>初期状態は，\([S1, C1, D1, H1] \)．
+1つ目のクエリにより，\(C1 \)~\(D1 \)が先頭に行くので，\([C1, D1, S1, H1] \)になる．
+2つ目のクエリにより，\(D1 \)~\(S1 \)が先頭に行くので，\([D1, S1, C1, H1] \)になる．
+\(N=1 \)の場合，どのように並び替えてもそれぞれ1枚ずつしかないので，出力結果は自明です．</p>
+<h3><a class="header" href="#入力例2" id="入力例2">入力例2</a></h3>
+<pre><code>3 2
+C2 D1
+S3 H3
+
+</code></pre>
+<h3><a class="header" href="#出力例2" id="出力例2">出力例2</a></h3>
+<pre><code>S3 S1 S2
+C1 C2 C3
+D2 D3 D1
+H1 H2 H3
+
+</code></pre>
+<p>初期状態は，\([S1, S2, S3, C1, C2, C3, D1, D2, D3, H1, H2, H3] \)．
+1つ目のクエリにより，\(C2 \)~\(D1 \)が先頭に行くので，\([C2, C3, D1, S1, S2, S3, C1, D2, D3, H1, H2, H3] \)になる．
+2つ目のクエリにより，\(S3 \)~\(H3 \)が先頭に行くので，\([S3, C1, D2, D3, H1, H2, H3, C2, C3, D1, S1, S2] \)になる．
+それぞれのマークのみからなる部分列は，スペードが\([S3,S1,S2] \)，クローバーが\([C1,C2,C3] \)，ダイヤが\([D2,D3,D1] \)，ハートが\([H1,H2,H3] \)となる．</p>
+<h3><a class="header" href="#入力例3" id="入力例3">入力例3</a></h3>
+<pre><code>2 1
+C2 C2
+
+</code></pre>
+<h3><a class="header" href="#出力例3" id="出力例3">出力例3</a></h3>
+<pre><code>S1 S2
+C2 C1
+D1 D2
+H1 H2
+
+</code></pre>
+<p>\(L_i \)と\(R_i \)が等しい場合もあります．その場合は，その1枚を先頭に持っていきます．</p>
+<h2><a class="header" href="#解法" id="解法">解法</a></h2>
+<h2><a class="header" href="#実装" id="実装">実装</a></h2>
+<pre><code class="language-py">class Node:
+  def __init__(self, value):
+    self.value = value
+    self.left = None
+    self.right = None
+
+def card2number(n, card):
+  if card[0] == 'S':
+    return int(card[1:])-1
+  elif card[0] == 'C':
+    return n + int(card[1:])-1
+  elif card[0] == 'D':
+    return 2*n + int(card[1:])-1
+  elif card[0] == 'H':
+    return 3*n + int(card[1:])-1
+  else:
+    raise Exception
+
+n, q = map(int, input().split())
+
+head = Node(0)
+nodes = [head]
+for i in range(1, 4*n):
+  node = Node(i)
+  nodes[-1].right = node
+  node.left = nodes[-1]
+  nodes.append(node)
+
+for _ in range(q):
+  l, r = map(lambda arg: card2number(n, arg), input().split())
+  if nodes[l].left is None:
+    continue
+  nodes[l].left.right = nodes[r].right
+  if nodes[r].right is not None:
+    nodes[r].right.left = nodes[l].left
+  head.left = nodes[r]
+  nodes[r].right = head
+  head = nodes[l]
+  nodes[l].left = None
+  tmp = head
+
+cards = [[], [], [], []]
+for _ in range(4*n):
+  cards[head.value//n].append(head.value%n+1)
+  head = head.right
+for i in range(4):
+  print(*[f'{&quot;SCDH&quot;[i]}{card}' for card in cards[i]])
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../linkedlist/main.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../graph/main.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../linkedlist/main.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../graph/main.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
