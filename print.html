@@ -673,7 +673,7 @@ for i in range(4):
 <pre><code class="language-py"># L : List(Lはリスト)
 # Convert L from List to Priority Queue(Lをプライオリティキューに変更)
 import heapq # Use heapq library(heapqライブラリを使用)
-L = [1,2,3,4,5]
+L = [1, 2, 3, 4, 5]
 heapq.heapify(L)
 
 # heappop: pop out the minimum number and return it 
@@ -726,7 +726,7 @@ heapq.heappush(L, 100)
 <p>そこで<font color="red"><b>プライオリティキュー</b></font>を使う。プライオリティキューでは、要素の追加、取り出しの計算量が\(O(\log N)\)であるため、これを用いた場合、全体の計算量は\(O(M \log N)\)となって間に合う。</p>
 <p>Pythonには<a href="https://docs.python.org/3/library/heapq.html">heapq</a>
 というライブラリがあるので、それを使えば特に複雑な実装をすることなく普通の配列をプライオリティキュー化可能である。</p>
-<p>ところが最大値を見つけて取り出す関数はない。（heapq.nlargestの計算量は\(O(n)\)以上\(O(n \log n)\)以下であり計算量が大きい上にプライオリティキューからの取り出しはできない）。
+<p>ところが最大値を見つけて取り出す関数はない（heapq.nlargestの計算量は\(O(n)\)以上\(O(n \log n)\)以下であり計算量が大きい上にプライオリティキューからの取り出しはできない）。
 しかし、今回のように最大値を取り出したい場合は<b>元の配列の要素を全て\(-1\)倍した配列をプライオリティキュー化すれば、その最小値を取り出すことは元の数列の最大値（の\(-1\)倍）の値が取り出せる</b>ことを利用する。そして最後に残った配列の要素を再び\(-1\)倍して元に戻せば良い。
 この手法で、本問題を解いてみる。</p>
 <h2><a class="header" href="#実装-5" id="実装-5">実装</a></h2>
